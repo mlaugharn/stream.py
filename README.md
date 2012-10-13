@@ -1,7 +1,9 @@
-stream
+Stream.py
 ======
 
-A utility class that allows for the brute-forcing of problems of the natural numbers. So you pretend you're filtering an infinite set without using infinite memory! This lets you do cool stuff!
+A utility class for the brute-forcing of problems with natural number solutions. 
+You can pretend you're filtering an infinite set without using infinite memory!
+Inspired by [streamjs](streamjs.org).
 
 First n numbers:
 
