@@ -1,7 +1,7 @@
 stream
 ======
 
-A utility class that allows for the brute-forcing of problems in the set Z. This lets you do cool stuff!
+A utility class that allows for the brute-forcing of problems of the natural numbers. So you pretend you're filtering an infinite set without using infinite memory! This lets you do cool stuff!
 
 First n numbers:
 
