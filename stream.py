@@ -1,18 +1,15 @@
 class Stream:
-	def __init__(self, mapFunction=None, filterFunction=None):
-		self.mapFunction = mapFunction
-		self.filterFunction = filterFunction
-		if self.mapFunction == None:
-			self.mapFunction = lambda x: x
-		if self.filterFunction == None:
-			self.filterFunction = lambda x: True
+	def __init__(self, map_function = None, filter_function = None):
+		self.map_function, self.filter_function = map_function, filter_function
+		if self.map_function == None: self.map_function = lambda x: x
+		if self.filter_function == None: self.filter_function = lambda x: True
 
-	def pluck(self, cardinality):
-		"""Returns a list of the first cardinality numbers that, once mapped by mapFunction, pass filterFunction"""
-		self.currentTestedInt = 0
-		self.matchedRealNumbers = []
-		while len(self.matchedRealNumbers) < cardinality:
-			if self.filterFunction(self.mapFunction(self.currentTestedInt)) == True:
-				self.matchedRealNumbers.append(self.mapFunction(self.currentTestedInt))
-			self.currentTestedInt += 1
-		return self.matchedRealNumbers
+	def pluck(self, n):
+		"""Yields the first n numbers that, once mapped by map_function, pass filter_function"""
+		i = 0
+		while n > 0:
+			computation = self.map_function(i)
+			if self.filter_function(computation):
+				yield computation
+				n -= 1
+			i += 1
